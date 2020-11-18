@@ -9,3 +9,7 @@
 <br/>
 - Maven
 </p>
+
+<b>Observação</b>: Se atentar ao arquivo application.properties. Caso opte por Docker: db:3306. Caso opte localhost: localhost.
+<br/>
+Precisa de alteração.
