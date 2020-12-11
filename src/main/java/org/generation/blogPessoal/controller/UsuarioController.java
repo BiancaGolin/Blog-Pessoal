@@ -1,5 +1,6 @@
 package org.generation.blogPessoal.controller;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.generation.blogPessoal.model.Usuario;
@@ -18,6 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/usuarios")
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 public class UsuarioController {
+
 	
 	@Autowired
 	private UsuarioService usuarioService;

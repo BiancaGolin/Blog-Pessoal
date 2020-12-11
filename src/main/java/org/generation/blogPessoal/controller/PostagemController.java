@@ -22,7 +22,7 @@ import org.springframework.web.bind.annotation.RestController;
 //CrossOrigin: permite que recursos restritos em uma pagina da web seja recuperado por outro dominio ao qual pertence o recurso q sera recuperado
 @RestController
 @RequestMapping("/postagens")
-@CrossOrigin("*")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class PostagemController {
 
 	@Autowired
@@ -44,6 +44,12 @@ public class PostagemController {
 	public ResponseEntity<List<Postagem>> GetByTitulo(@PathVariable String titulo) {
 		return ResponseEntity.ok(repository.findAllByTituloContainingIgnoreCase(titulo));
 	}
+	
+	@GetMapping("/texto/{texto}")
+	public ResponseEntity<List<Postagem>> findByTexto(@PathVariable String texto) {
+		return ResponseEntity.ok(repository.findAllByTextoContainingIgnoreCase(texto));
+	}
+	
 	
 	@PostMapping
 	public ResponseEntity<Postagem> post (@RequestBody Postagem postagem) {
